@@ -1,0 +1,158 @@
+version: "3.1"
+
+stories:
+  - story: happy path (en)
+    steps:
+      - intent: greet_en
+      - action: utter_greet_en
+      - intent: chitchat_en
+      - action: utter_chitchat_en
+      - intent: affirm_en
+      - action: utter_affirm_en
+      - intent: goodbye_en
+      - action: utter_goodbye_en
+
+  - story: happy path (ar)
+    steps:
+      - intent: greet_ar
+      - action: utter_greet_ar
+      - intent: chitchat_ar
+      - action: utter_chitchat_ar
+      - intent: affirm_ar
+      - action: utter_affirm_ar
+      - intent: goodbye_ar
+      - action: utter_goodbye_ar
+
+  - story: unhappy path (en)
+    steps:
+      - intent: greet_en
+      - action: utter_greet_en
+      - intent: chitchat_en
+      - action: utter_chitchat_en
+      - intent: deny_en
+      - action: utter_deny_en
+      - intent: goodbye_en
+      - action: utter_goodbye_en
+
+  - story: unhappy path (ar)
+    steps:
+      - intent: greet_ar
+      - action: utter_greet_ar
+      - intent: chitchat_ar
+      - action: utter_chitchat_ar
+      - intent: deny_ar
+      - action: utter_deny_ar
+      - intent: goodbye_ar
+      - action: utter_goodbye_ar
+
+  - story: stop conversation (en)
+    steps:
+      - intent: greet_en
+      - action: utter_greet_en
+      - intent: chitchat_en
+      - action: utter_chitchat_en
+      - intent: stop_en
+      - action: utter_stop_en
+
+  - story: stop conversation (ar)
+    steps:
+      - intent: greet_ar
+      - action: utter_greet_ar
+      - intent: chitchat_ar
+      - action: utter_chitchat_ar
+      - intent: stop_ar
+      - action: utter_stop_ar
+
+  - story: thank you (en)
+    steps:
+      - intent: greet_en
+      - action: utter_greet_en
+      - intent: affirm_en
+      - action: utter_affirm_en
+      - intent: thankyou_en
+      - action: utter_thankyou_en
+
+  - story: thank you (ar)
+    steps:
+      - intent: greet_ar
+      - action: utter_greet_ar
+      - intent: affirm_ar
+      - action: utter_affirm_ar
+      - intent: thankyou_ar
+      - action: utter_thankyou_ar
+
+  - story: mood great (en)
+    steps:
+      - intent: greet_en
+      - action: utter_greet_en
+      - intent: chitchat_en
+      - action: utter_chitchat_en
+      - intent: mood_great_en
+      - action: utter_mood_great_en
+
+  - story: mood great (ar)
+    steps:
+      - intent: greet_ar
+      - action: utter_greet_ar
+      - intent: chitchat_ar
+      - action: utter_chitchat_ar
+      - intent: mood_great_ar
+      - action: utter_mood_great_ar
+
+  - story: mood unhappy (en)
+    steps:
+      - intent: greet_en
+      - action: utter_greet_en
+      - intent: chitchat_en
+      - action: utter_chitchat_en
+      - intent: mood_unhappy_en
+      - action: utter_mood_unhappy_en
+
+  - story: mood unhappy (ar)
+    steps:
+      - intent: greet_ar
+      - action: utter_greet_ar
+      - intent: chitchat_ar
+      - action: utter_chitchat_ar
+      - intent: mood_unhappy_ar
+      - action: utter_mood_unhappy_ar
+
+  - story: bot challenge (en)
+    steps:
+      - intent: greet_en
+      - action: utter_greet_en
+      - intent: bot_challenge_en
+      - action: utter_iamabot_en
+
+  - story: bot challenge (ar)
+    steps:
+      - intent: greet_ar
+      - action: utter_greet_ar
+      - intent: bot_challenge_ar
+      - action: utter_iamabot_ar
+
+  - story: fallback (en)
+    steps:
+      - intent: greet_en
+      - action: utter_greet_en
+      - intent: nlu_fallback_en
+      - action: action_default_fallback
+
+  - story: fallback (ar)
+    steps:
+      - intent: greet_ar
+      - action: utter_greet_ar
+      - intent: nlu_fallback_ar
+      - action: action_default_fallback
+
+  - story: interactive_story_1
+    steps:
+      - intent: greet_ar
+      - action: utter_greet_ar
+      - intent: chitchat_ar
+      - action: utter_chitchat_ar
+      - intent: chitchat_ar
+      - action: utter_chitchat_ar
+      - intent: greet-ar
+      - intent: goodbye-ar
+      - action: utter_goodbye_ar

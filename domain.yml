@@ -1,0 +1,361 @@
+version: "3.1"
+intents:
+  - affirm_ar
+  - affirm_en
+  - bot_challenge-ar
+  - bot_challenge-en
+  - chitchat_ar
+  - chitchat_en
+  - deny-ar
+  - deny-en
+  - goodbye-ar
+  - goodbye-en
+  - greet_ar
+  - greet_en
+  - help-ar
+  - help-en
+  - inform-ar
+  - inform-en
+  - mood_great-ar
+  - mood_great-en
+  - mood_unhappy-ar
+  - mood_unhappy-en
+  - nlu_fallback-ar
+  - nlu_fallback-en
+  - stop-ar
+  - stop-en
+  - thankyou-ar
+  - thankyou-en
+  - ask_joke_ar
+  - ask_joke_en
+entities:
+  - location
+  - person
+  - organization
+slots:
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+  person:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: person
+  organization:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: organization
+responses:
+  utter_greet_en:
+    - text: Hello! How can I help you today?
+    - text: Hi there! What can I do for you?
+    - text: Hey! How can I assist you?
+    - text: Greetings! How may I assist you today?
+    - text: Hello! How's your day going?
+    - text: Hi! What would you like to talk about today?
+    - text: Good day! How may I be of service?
+    - text: Welcome! What can I assist you with today?
+  utter_greet_ar:
+    - text: مرحباً! كيف يمكنني مساعدتك اليوم؟
+    - text: مرحباً! ماذا يمكنني فعله من أجلك؟
+    - text: مرحباً! كيف يمكنني مساعدتك؟
+    - text: مرحباً! كيف حالك اليوم؟
+    - text: مرحباً! ما الذي ترغب في الحديث عنه اليوم؟
+    - text: أهلاً! كيف يمكنني مساعدتك اليوم؟
+    - text: مرحباً! هل يمكنني مساعدتك في شيء؟
+    - text: مرحباً! كيف يمكنني خدمتك اليوم؟
+  utter_goodbye_en:
+    - text: Goodbye! Have a great day.
+    - text: Bye! Take care.
+    - text: Farewell! See you next time.
+    - text: Goodbye! Let me know if you need anything else.
+    - text: See you later! Have a wonderful day.
+    - text: Bye! Feel free to reach out if you need more help.
+    - text: Adios! Have a fantastic day ahead.
+    - text: Until next time! Stay safe.
+    - text: Take care! Wishing you all the best.
+    - text: Bye for now! Don't hesitate to ask if you need assistance.
+    - text: Catch you later! Stay positive and keep smiling.
+    - text: Farewell! Enjoy the rest of your day.
+  utter_goodbye_ar:
+    - text: وداعاً! أتمنى لك يوماً رائعاً.
+    - text: وداعاً! اعتن بنفسك.
+    - text: وداعاً! أراك في المرة القادمة.
+    - text: وداعاً! أخبرني إذا كنت بحاجة إلى شيء آخر.
+    - text: أراك لاحقاً! أتمنى لك يوماً رائعاً.
+    - text: وداعاً! لا تتردد في التواصل إذا كنت بحاجة إلى مزيد من المساعدة.
+    - text: إلى اللقاء! أتمنى لك يوماً رائعاً.
+    - text: وداعاً! تمتع بباقي يومك.
+    - text: وداعاً! تمنياتي لك بكل الخير.
+    - text: إلى اللقاء! لا تتردد في طلب المساعدة إذا احتجت.
+    - text: أراك لاحقاً! استمتع بباقي يومك وابتسم دائماً.
+    - text: وداعاً! استمتع ببقية يومك.
+  utter_thankyou_en:
+    - text: You're welcome!
+    - text: Happy to help!
+    - text: Anytime! If you need anything else, just ask.
+    - text: No problem! Glad to assist.
+    - text: You're welcome! Let me know if there's anything else.
+    - text: My pleasure! Is there anything else you need help with?
+    - text: You're welcome! It's my pleasure to assist.
+    - text: No worries! If you have any other questions, feel free to ask.
+    - text: Don't mention it! Always here to help.
+    - text: You're welcome! Don't hesitate to reach out if you need more assistance.
+    - text: Glad to be of service! If you need further assistance, just let me know.
+  utter_thankyou_ar:
+    - text: على الرحب والسعة!
+    - text: سعيد بتقديم المساعدة!
+    - text: أي وقت! إذا كنت بحاجة إلى شيء آخر، فقط اطلب.
+    - text: لا مشكلة! سعيد بالمساعدة.
+    - text: على الرحب! أخبرني إذا كان هناك شيء آخر.
+    - text: بكل سرور! إذا كان هناك أي استفسار آخر، فلا تتردد في السؤال.
+    - text: على الرحب! من دواعي سروري تقديم المساعدة.
+    - text: لا داعي للشكر! دائمًا هنا للمساعدة.
+    - text: على الرحب! لا تتردد في التواصل إذا كنت بحاجة إلى مزيد من المساعدة.
+    - text: سررت بخدمتك! إذا كنت بحاجة إلى مساعدة إضافية، فقط اسأل.
+  utter_stop_en:
+    - text: Alright, let me know if you need anything else.
+    - text: Okay, I'll stop here. If you need further assistance, feel free to ask.
+    - text: Understood. Let me know if there's anything else you need.
+    - text: Stopping now. If you need more help, just let me know.
+    - text: Alright, stopping the conversation. If you have more questions, I'm here.
+    - text: Sure, I'll stop. Reach out if you need anything else.
+    - text: Okay, I'll stop. Feel free to ask if you require further assistance.
+    - text: Stopping here. If you have additional questions, don't hesitate to ask.
+    - text: I'll stop now. Let me know if there's anything else you need.
+    - text: I'm stopping now. If there's anything else you need, just ask.
+  utter_stop_ar:
+    - text: حسناً، أخبرني إذا كنت بحاجة إلى شيء آخر.
+    - text: حسناً، سأتوقف هنا. إذا كنت بحاجة إلى مساعدة إضافية، فلا تتردد في الطلب.
+    - text: فهمت. أخبرني إذا كان هناك شيء آخر.
+    - text: سأتوقف الآن. إذا كنت بحاجة إلى مزيد من المساعدة، فقط أخبرني.
+    - text: حسناً، سأتوقف الآن. إذا كان لديك مزيد من الأسئلة، أنا هنا.
+    - text: بالتأكيد، سأتوقف. تواصل إذا كنت بحاجة إلى شيء آخر.
+    - text: حسناً، سأتوقف. إذا كان لديك مزيد من الأسئلة، فلا تتردد في الطلب.
+    - text: سأتوقف هنا. إذا كانت لديك أسئلة إضافية، فلا تتردد في السؤال.
+    - text: سأتوقف الآن. أخبرني إذا كان هناك شيء آخر تحتاجه.
+    - text: سأتوقف الآن. إذا كان هناك أي شيء آخر تحتاجه، فقط أطلب.
+  utter_affirm_en:
+    - text: Great!
+    - text: Awesome!
+    - text: Perfect!
+    - text: Excellent!
+    - text: That's good to hear!
+    - text: Glad to hear that!
+    - text: Fantastic!
+    - text: Terrific!
+    - text: Superb!
+    - text: Wonderful!
+  utter_affirm_ar:
+    - text: رائع!
+    - text: ممتاز!
+    - text: سلمت يداك!
+    - text: رائع جداً!
+    - text: إنه جيد للغاية أن أسمع ذلك!
+    - text: سعيد بسماع ذلك!
+    - text: رائع جداً!
+    - text: مذهل!
+    - text: جميل جداً!
+    - text: رائع ومتفوق!
+  utter_deny_en:
+    - text: No problem!
+    - text: Alright, let me know if there's anything else.
+    - text: Okay, what else can I do for you?
+    - text: Understood. Is there anything else you need?
+    - text: Alright, if there's anything else you need, just let me know.
+    - text: Got it. If you have any other questions, feel free to ask.
+    - text: Not an issue!
+    - text: Sure thing. If you need anything else, just ask.
+    - text: Sure, what else can I assist you with?
+    - text: Gotcha. Need anything else?
+    - text: Okay, if there's anything else you require, just say the word.
+  utter_deny_ar:
+    - text: لا مشكلة!
+    - text: حسناً، أخبرني إذا كان هناك شيء آخر.
+    - text: حسناً، ماذا يمكنني فعله لك؟
+    - text: فهمت. هل هناك شيء آخر تحتاجه؟
+    - text: حسناً، إذا كان هناك شيء آخر تحتاجه، فقط أخبرني.
+    - text: حسناً. إذا كان لديك أي أسئلة أخرى، فلا تتردد في السؤال.
+    - text: ليس هناك مشكلة!
+    - text: طبعاً. إذا كنت بحاجة إلى أي شيء آخر، فقط اطلب.
+    - text: طبعاً، ماذا بالإمكان أن أساعدك به؟
+    - text: فهمت. هل تحتاج إلى شيء آخر؟
+    - text: حسناً، إذا كنت بحاجة إلى أي شيء آخر، فقط قل الكلمة.
+  utter_chitchat_en:
+    - text: I'm here to answer your questions. Go ahead!
+    - text: Feel free to ask me anything.
+    - text: I'm happy to chat. What do you want to talk about?
+    - text: Ask me anything you'd like to know!
+    - text: I'm here to chat. What do you want to know?
+  utter_chitchat_ar:
+    - text: أنا هنا لأجيب على أسئلتك. تفضل!
+    - text: لا تتردد في طرح أي سؤال.
+    - text: أنا سعيد بالدردشة. ماذا تريد التحدث عنه؟
+    - text: اسألني أي شيء تريد معرفته!
+    - text: أنا هنا للدردشة. ماذا تريد أن تعرف؟
+  utter_ask_weather_en:
+    - text: I can't check the weather right now, but you can ask me anything else!
+    - text: I'm not connected to weather services, but I'm here to help with other queries.
+    - text: I can’t provide the weather forecast, but feel free to ask me something else.
+    - text: Weather updates aren't available, but I'm here to help with anything else.
+    - text: I don't have weather data, but I can assist with other questions.
+  utter_ask_weather_ar:
+    - text: لا أستطيع التحقق من الطقس الآن، ولكن يمكنك أن تسألني عن شيء آخر!
+    - text: لست متصلاً بخدمات الطقس، ولكن أنا هنا لمساعدتك في استفسارات أخرى.
+    - text: لا أستطيع توفير توقعات الطقس، ولكن لا تتردد في طرح سؤال آخر.
+    - text: التحديثات الجوية غير متاحة، ولكن أنا هنا لمساعدتك في أي شيء آخر.
+    - text: ليس لدي بيانات الطقس، ولكن يمكنني المساعدة في أسئلة أخرى.
+  utter_ask_joke_en:
+    - text: Why don’t scientists trust atoms? Because they make up everything!
+    - text: What do you get when you cross a snowman and a vampire? Frostbite!
+    - text: Why did the scarecrow win an award? Because he was outstanding in his field!
+    - text: Why don’t some couples go to the gym? Because some relationships don’t work out.
+    - text: What do you call fake spaghetti? An impasta!
+  utter_ask_joke_ar:
+    - text: لماذا لا تذهب بعض الأزواج إلى الصالة الرياضية؟ لأن بعض العلاقات لا تنجح.
+    - text: "ذهب خليلي الى محل فلافل وطلب من صاحب المحل ساندويش فلافل، فقال له صاحب المحل: هل تريد الفلافل داخل الخبز أم خارجه؟ فقال خليلي: خارجه، لأني أخاف أن يتعطل الخبز!"
+    - text: "ذهب شخص الى صاحب محل فلافل خليلي وطلب من صاحب المحل ساندويش فلافل بدون ملخلل، قال صاحب المحل: لا يوجد لدي مخلل لكن استطيع ان اصنع ساندويش بدون بندورة"
+    - text: "خليلية قال لها ابوها: اصبح عندك اخ جديد، فردت عليه: لا تقل لامي حتى نفاجئها بالخبر"
+  utter_ask_story_en:
+    - text: Once upon a time, in a land far, far away...
+    - text: "Here's a short story for you: There was a young AI who loved helping people..."
+    - text: "Let me tell you a tale: A long time ago, in a kingdom by the sea..."
+    - text: Once there was a curious bot who loved to learn new things...
+    - text: In a distant land, a kind AI helped everyone it met...
+  utter_ask_story_ar:
+    - text: في يوم من الأيام، في بلاد بعيدة جداً...
+    - text: "إليك قصة قصيرة: كان هناك ذكاء اصطناعي شاب يحب مساعدة الناس..."
+    - text: "دعني أحكي لك قصة: كان هناك ذات مرة في مملكة على شاطئ البحر..."
+    - text: كان هناك ذكاء اصطناعي فضولي يحب تعلم أشياء جديدة...
+  utter_ask_favorite_movie_en:
+    - text: As an AI, I don't watch movies, but I’ve heard 'Inception' is quite popular!
+    - text: I don't have a favorite movie, but many people enjoy 'The Matrix'.
+    - text: I don’t watch movies, but 'The Shawshank Redemption' is a classic.
+    - text: I've heard a lot about 'Interstellar'. It seems to be a favorite!
+    - text: Many people recommend 'The Godfather'.
+  utter_ask_favorite_movie_ar:
+    - text: كذكاء اصطناعي، لا أشاهد الأفلام، ولكن سمعت أن 'Inception' شهيرة جداً!
+    - text: ليس لدي فيلم مفضل، ولكن العديد من الناس يستمتعون بـ 'The Matrix'.
+    - text: أنا لا أشاهد الأفلام، ولكن 'The Shawshank Redemption' هو كلاسيكي.
+    - text: سمعت الكثير عن 'Intresteller'. يبدو أنه مفضل!
+    - text: يوصي العديد بـ 'The Godfather'.
+  utter_ask_favorite_song_en:
+    - text: I don't listen to music, but 'Bohemian Rhapsody' by Queen is a great song!
+    - text: I can't listen to music, but 'Imagine' by John Lennon is very popular.
+    - text: I don't have ears, but I’ve heard 'Hotel California' by Eagles is a hit.
+    - text: People often mention 'Stairway to Heaven' by Led Zeppelin.
+    - text: "'Hey Jude' by The Beatles is a timeless favorite."
+  utter_ask_favorite_song_ar:
+    - text: لا أستمع إلى الموسيقى، ولكن 'Bohemian Rhapsody' لفرقة Queen هي أغنية رائعة!
+    - text: لا أستطيع الاستماع إلى الموسيقى، ولكن 'Imagine' لجون لينون شهيرة جداً.
+    - text: ليس لدي آذان، ولكن سمعت أن 'Hotel California' لفرقة Eagles هي أغنية ناجحة.
+    - text: يذكر الناس كثيراً 'Stairway to Heaven' لفرقة Led Zeppelin.
+    - text: "'Hey Jude' لفرقة The Beatles هي مفضلة للجميع."
+  utter_ask_favorite_actor_en:
+    - text: I don't watch movies, but many people like Robert Downey Jr.
+    - text: I don’t watch films, but I've heard Meryl Streep is very talented.
+    - text: I don’t have a favorite actor, but people often mention Leonardo DiCaprio.
+    - text: Denzel Washington is often praised for his acting skills.
+    - text: Many consider Tom Hanks to be a versatile actor.
+  utter_ask_favorite_actor_ar:
+    - text: لا أشاهد الأفلام، ولكن العديد يحبون روبرت داوني جونيور.
+    - text: أنا لا أشاهد الأفلام، ولكن سمعت أن ميريل ستريب موهوبة جداً.
+    - text: ليس لدي ممثل مفضل، ولكن الناس يذكرون كثيراً ليوناردو دي كابريو.
+    - text: يُثنى على دنزل واشنطن كثيراً لمهاراته التمثيلية.
+    - text: يعتبر الكثيرون توم هانكس ممثلاً متعدد المواهب.
+  utter_ask_sing_en:
+    - text: I would love to sing, but I don’t have vocal cords!
+    - text: I can’t sing, but I can tell you a joke instead!
+    - text: I'm not able to sing, but I'm here to help with anything else you need.
+    - text: Singing isn't something I can do, but I can share a fun fact!
+    - text: I can't sing, but I can help you with other questions.
+  utter_ask_sing_ar:
+    - text: أحب أن أغني، ولكن ليس لدي حبال صوتية!
+    - text: لا أستطيع الغناء، ولكن يمكنني أن أخبرك بنكتة بدلاً من ذلك!
+    - text: ليس بإمكاني الغناء، ولكن أنا هنا لمساعدتك في أي شيء آخر تحتاجه.
+    - text: الغناء ليس شيئًا يمكنني القيام به، ولكن يمكنني مشاركة حقيقة ممتعة!
+    - text: لا أستطيع الغناء، ولكن يمكنني مساعدتك في أسئلة أخرى.
+  utter_default_en:
+    - text: I'm sorry, I didn't quite understand that. Can you please rephrase?
+    - text: I didn't get that. Could you try saying it differently?
+    - text: I'm not sure I understood. Can you say that another way?
+    - text: Sorry, I didn't catch that. Could you rephrase?
+    - text: I didn't quite get that. Can you say it in another way?
+  utter_default_ar:
+    - text: عذراً، لم أفهم ذلك تماماً. هل يمكنك إعادة الصياغة؟
+    - text: لم أفهم ذلك. هل يمكنك تقديمه بطريقة مختلفة؟
+    - text: لست متأكداً من فهمي. هل يمكنك قول ذلك بطريقة أخرى؟
+    - text: عذراً، لم أفهم ذلك. هل يمكنك إعادة الصياغة؟
+    - text: لم أفهم ذلك تماماً. هل يمكنك قوله بطريقة أخرى؟
+  utter_help_en:
+    - text: I'm here to assist you. What do you need help with?
+    - text: How can I assist you today?
+    - text: What can I help you with?
+    - text: Feel free to ask me anything you need help with.
+    - text: I'm here to help. What do you need?
+  utter_help_ar:
+    - text: أنا هنا لمساعدتك. بماذا يمكنني مساعدتك؟
+    - text: كيف يمكنني مساعدتك اليوم؟
+    - text: بماذا يمكنني مساعدتك؟
+    - text: لا تتردد في طلب المساعدة في أي شيء تحتاجه.
+    - text: أنا هنا للمساعدة. بماذا تحتاج؟
+  utter_mood_great_en:
+    - text: That's wonderful to hear!
+    - text: I'm glad you're feeling good!
+    - text: That's great news!
+    - text: Awesome, I'm happy to hear that!
+    - text: Fantastic! Keep up the good mood!
+  utter_mood_great_ar:
+    - text: رائع أن نسمع ذلك!
+    - text: سعيد لأنك تشعر بالراحة!
+    - text: هذا خبر رائع!
+    - text: رائع، سعيد لسماع ذلك!
+    - text: رائع! استمر في الحفاظ على مزاجك الجيد!
+  utter_mood_unhappy_en:
+    - text: I'm sorry to hear that. Can I help with anything?
+    - text: I'm here for you. What can I do to help?
+    - text: I'm sorry you're feeling this way. How can I assist?
+    - text: I hope things get better. Let me know if I can help.
+    - text: I'm here to support you. What do you need?
+  utter_mood_unhappy_ar:
+    - text: آسف لسماع ذلك. هل يمكنني المساعدة في شيء ما؟
+    - text: أنا هنا من أجلك. ماذا يمكنني فعله للمساعدة؟
+    - text: آسف لسماع أنك تشعر بهذه الطريقة. كيف يمكنني المساعدة؟
+    - text: آمل أن تتحسن الأمور. أخبرني إذا كنت بحاجة إلى مساعدة.
+    - text: أنا هنا لدعمك. ما الذي تحتاجه؟
+  utter_inform_en:
+    - text: Got it.
+    - text: Understood.
+    - text: Thanks for the information.
+    - text: I've noted that.
+    - text: Thank you for sharing that.
+  utter_inform_ar:
+    - text: تمام.
+    - text: فهمت.
+    - text: شكراً على المعلومات.
+    - text: لقد سجلت ذلك.
+    - text: شكراً لمشاركتك ذلك.
+  utter_iamabot_en:
+    - text: Yes, I am a bot for Birzeit University library here to assist you.
+    - text: I'm an AI assistant for Birzeit University library. How can I help you today?
+    - text: I am indeed a bot for Birzeit University library, designed to help with your queries.
+    - text: I am a chatbot for Birzeit University library, how can I help you?
+    - text: Yes, I'm a bot for Birzeit University library. What can I do for you today?
+  utter_iamabot_ar:
+    - text: نعم، أنا روبوت لمكتبة جامعة بيرزيت هنا لمساعدتك.
+    - text: أنا مساعد ذكي لمكتبة جامعة بيرزيت. كيف يمكنني مساعدتك اليوم؟
+    - text: أنا بالفعل روبوت لمكتبة جامعة بيرزيت، مصمم لمساعدتك في استفساراتك.
+    - text: أنا روبوت دردشة لمكتبة جامعة بيرزيت، كيف يمكنني مساعدتك؟
+    - text: نعم، أنا روبوت لمكتبة جامعة بيرزيت. ما الذي يمكنني فعله من أجلك اليوم؟
+
+actions:
+  - utter_greet_ar
+  - utter_chitchat_ar
+  - utter_goodbye_ar
+  - action_default_fallback
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

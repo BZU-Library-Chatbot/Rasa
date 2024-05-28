@@ -1,0 +1,52 @@
+version: "3.1"
+
+rules:
+  - rule: Say goodbye anytime the user says goodbye (en)
+    steps:
+      - intent: goodbye-en
+      - action: utter_goodbye_en
+
+  - rule: Say goodbye anytime the user says goodbye (ar)
+    steps:
+      - intent: goodbye-ar
+      - action: utter_goodbye_ar
+
+  - rule: Say 'I am a bot' anytime the user challenges (en)
+    steps:
+      - intent: bot_challenge-en
+      - action: utter_iamabot_en
+
+  - rule: Say 'I am a bot' anytime the user challenges (ar)
+    steps:
+      - intent: bot_challenge-ar
+      - action: utter_iamabot_ar
+
+  # - rule: Handle fallback en
+  #   steps:
+  #     - intent: nlu_fallback-en
+  #     - action: utter_default_en
+
+  # - rule: Handle fallback ar
+  #   steps:
+  #     - intent: nlu_fallback-ar
+  #     - action: utter_default_ar
+
+  - rule: say hi anytime the user says hi (en)
+    steps:
+      - intent: greet_en
+      - action: utter_greet_en
+
+  - rule: say hi anytime the user says hi (ar)
+    steps:
+      - intent: greet_ar
+      - action: utter_greet_ar
+
+  - rule: say a joke whenever asked for one (en)
+    steps:
+      - intent: ask_joke_en
+      - action: utter_ask_joke_en
+
+  - rule: say a joke whenever asked for one (ar)
+    steps:
+      - intent: ask_joke_ar
+      - action: utter_ask_joke_ar

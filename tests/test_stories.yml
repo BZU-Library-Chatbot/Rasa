@@ -1,0 +1,176 @@
+stories:
+  - story: happy path 1 (en)
+    steps:
+      - user: |
+          hello there!
+        intent: greet_en
+      - action: utter_greet_en
+      - user: |
+          amazing
+        intent: mood_great_en
+      - action: utter_happy_en
+
+  - story: happy path 2 (en)
+    steps:
+      - user: |
+          hello there!
+        intent: greet_en
+      - action: utter_greet_en
+      - user: |
+          amazing
+        intent: mood_great_en
+      - action: utter_happy_en
+      - user: |
+          bye-bye!
+        intent: goodbye_en
+      - action: utter_goodbye_en
+
+  - story: sad path 1 (en)
+    steps:
+      - user: |
+          hello
+        intent: greet_en
+      - action: utter_greet_en
+      - user: |
+          not good
+        intent: mood_unhappy_en
+      - action: utter_cheer_up_en
+      - action: utter_did_that_help_en
+      - user: |
+          yes
+        intent: affirm_en
+      - action: utter_happy_en
+
+  - story: sad path 2 (en)
+    steps:
+      - user: |
+          hello
+        intent: greet_en
+      - action: utter_greet_en
+      - user: |
+          not good
+        intent: mood_unhappy_en
+      - action: utter_cheer_up_en
+      - action: utter_did_that_help_en
+      - user: |
+          not really
+        intent: deny_en
+      - action: utter_goodbye_en
+
+  - story: sad path 3 (en)
+    steps:
+      - user: |
+          hi
+        intent: greet_en
+      - action: utter_greet_en
+      - user: |
+          very terrible
+        intent: mood_unhappy_en
+      - action: utter_cheer_up_en
+      - action: utter_did_that_help_en
+      - user: |
+          no
+        intent: deny_en
+      - action: utter_goodbye_en
+
+  - story: say goodbye (en)
+    steps:
+      - user: |
+          bye-bye!
+        intent: goodbye_en
+      - action: utter_goodbye_en
+
+  - story: bot challenge (en)
+    steps:
+      - user: |
+          are you a bot?
+        intent: bot_challenge_en
+      - action: utter_iamabot_en
+
+  - story: happy path 1 (ar)
+    steps:
+      - user: |
+          مرحبا!
+        intent: greet_ar
+      - action: utter_greet_ar
+      - user: |
+          رائع
+        intent: mood_great_ar
+      - action: utter_happy_ar
+
+  - story: happy path 2 (ar)
+    steps:
+      - user: |
+          مرحبا!
+        intent: greet_ar
+      - action: utter_greet_ar
+      - user: |
+          رائع
+        intent: mood_great_ar
+      - action: utter_happy_ar
+      - user: |
+          وداعا!
+        intent: goodbye_ar
+      - action: utter_goodbye_ar
+
+  - story: sad path 1 (ar)
+    steps:
+      - user: |
+          مرحبا
+        intent: greet_ar
+      - action: utter_greet_ar
+      - user: |
+          ليست جيدة
+        intent: mood_unhappy_ar
+      - action: utter_cheer_up_ar
+      - action: utter_did_that_help_ar
+      - user: |
+          نعم
+        intent: affirm_ar
+      - action: utter_happy_ar
+
+  - story: sad path 2 (ar)
+    steps:
+      - user: |
+          مرحبا
+        intent: greet_ar
+      - action: utter_greet_ar
+      - user: |
+          ليست جيدة
+        intent: mood_unhappy_ar
+      - action: utter_cheer_up_ar
+      - action: utter_did_that_help_ar
+      - user: |
+          ليس حقاً
+        intent: deny_ar
+      - action: utter_goodbye_ar
+
+  - story: sad path 3 (ar)
+    steps:
+      - user: |
+          مرحبا
+        intent: greet_ar
+      - action: utter_greet_ar
+      - user: |
+          سيئ جداً
+        intent: mood_unhappy_ar
+      - action: utter_cheer_up_ar
+      - action: utter_did_that_help_ar
+      - user: |
+          لا
+        intent: deny_ar
+      - action: utter_goodbye_ar
+
+  - story: say goodbye (ar)
+    steps:
+      - user: |
+          وداعا!
+        intent: goodbye_ar
+      - action: utter_goodbye_ar
+
+  - story: bot challenge (ar)
+    steps:
+      - user: |
+          هل أنت روبوت؟
+        intent: bot_challenge_ar
+      - action: utter_iamabot_ar
