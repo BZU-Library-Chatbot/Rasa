@@ -28,26 +28,42 @@ intents:
   - thankyou-en
   - ask_joke_ar
   - ask_joke_en
+  - ask_book_by_title_en
+  - ask_book_by_author_en
+  - ask_book_by_subject_en
+  - ask_book_by_language_en
+  - ask_book_by_title_ar
+  - ask_book_by_author_ar
+  - ask_book_by_subject_ar
+  - ask_book_by_language_ar
+  - request_book_recommendation_en
+  - request_book_recommendation_ar
 entities:
-  - location
-  - person
-  - organization
+  - book_title
+  - author
+  - subject
+  - language
 slots:
-  location:
+  book_title:
     type: text
     mappings:
       - type: from_entity
-        entity: location
-  person:
+        entity: book_title
+  author:
     type: text
     mappings:
       - type: from_entity
-        entity: person
-  organization:
+        entity: book_title
+  subject:
     type: text
     mappings:
       - type: from_entity
-        entity: organization
+        entity: subject
+  language:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: language
 responses:
   utter_greet_en:
     - text: Hello! How can I help you today?
@@ -350,11 +366,13 @@ responses:
     - text: أنا بالفعل روبوت لمكتبة جامعة بيرزيت، مصمم لمساعدتك في استفساراتك.
     - text: أنا روبوت دردشة لمكتبة جامعة بيرزيت، كيف يمكنني مساعدتك؟
     - text: نعم، أنا روبوت لمكتبة جامعة بيرزيت. ما الذي يمكنني فعله من أجلك اليوم؟
+  utter_request_book_recommendation_en:
+    - text: "Can you provide me with more details to recommend a book? for example, the title, author, subject, or language."
+  utter_request_book_recommendation_ar:
+    - text: "هل يمكنك تقديم المزيد من التفاصيل لأوصيك بكتاب؟ على سبيل المثال، العنوان، الكاتب، الموضوع، أو اللغة."
 
 actions:
-  - utter_greet_ar
-  - utter_chitchat_ar
-  - utter_goodbye_ar
+  - action_provide_book_recommendation
   - action_default_fallback
 session_config:
   session_expiration_time: 60

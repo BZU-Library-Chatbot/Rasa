@@ -31,6 +31,9 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from langdetect import detect
 
+import json
+from typing import Any, Text, Dict, List
+
 class ActionDefaultFallback(Action):
 
     def name(self) -> str:
@@ -49,4 +52,56 @@ class ActionDefaultFallback(Action):
         else:
             dispatcher.utter_message(text="I'm sorry, I didn't quite understand that. Can you please rephrase?")
         
+        return []
+
+class ActionProvideBookRecommendation(Action):
+    def name(self) -> str:
+        return "action_provide_book_recommendation"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[str, Any]) -> List[Dict[str, Any]]:
+
+        # Extract entities from user query
+        entities = tracker.latest_message.get("entities", [])
+        book_title = next((entity.get("value") for entity in entities if entity["entity"] == "book_title"), None)
+        author = next((entity.get("value") for entity in entities if entity["entity"] == "author"), None)
+        subject = next((entity.get("value") for entity in entities if entity["entity"] == "subject"), None)
+        language = next((entity.get("value") for entity in entities if entity["entity"] == "language"), None)
+
+        # Detect user language
+        user_message = tracker.latest_message.get('text')
+        detected_language = detect(user_message)
+        
+        # Load books data
+        with open('./data/books.json') as f:
+            books = json.load(f)
+
+        # Filter books based on user query
+        filtered_books = books
+        if book_title:
+            filtered_books = [book for book in filtered_books if book_title.lower() in book['Title'].lower()]
+        if author:
+            filtered_books = [book for book in filtered_books if any(author.lower() in a.lower() for a in book['Author'])]
+        if subject:
+            filtered_books = [book for book in filtered_books if any(subject.lower() in s.lower() for s in book['Subjects'])]
+        if language:
+            filtered_books = [book for book in filtered_books if book['Language'].lower() == language.lower()]
+
+        # Get up to 5 random book recommendations from filtered books
+        recommendations = filtered_books[:5]
+        
+        # Generate response
+        if detected_language == 'ar':
+            response = "إليك بعض توصيات الكتب:\n\n"
+        else:
+            response = "Here are some book recommendations:\n\n"
+
+        counter = 1
+        for book in recommendations:
+            response += f"{counter}. {book['Title']} by {', '.join(book['Author'])}\n\n"
+            counter += 1
+
+
+        dispatcher.utter_message(text=response)
         return []
