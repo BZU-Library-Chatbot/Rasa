@@ -156,3 +156,21 @@ stories:
       - intent: greet-ar
       - intent: goodbye-ar
       - action: utter_goodbye_ar
+
+  - story: happy path about books (en)
+    steps:
+      - intent: request_book_recommendation_en
+      - action: utter_request_book_recommendation_en
+      - intent: ask_book_by_subject_en
+      - action: action_provide_book_recommendation
+      - intent: affirm_en
+      - action: utter_affirm_en
+
+  - story: happy path about books (ar)
+    steps:
+      - intent: request_book_recommendation_ar
+      - action: utter_request_book_recommendation_ar
+      - intent: ask_book_by_subject_ar
+      - action: action_provide_book_recommendation
+      - intent: affirm_ar
+      - action: utter_affirm_ar

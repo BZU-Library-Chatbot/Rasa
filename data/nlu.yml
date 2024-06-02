@@ -446,3 +446,112 @@ nlu:
       - قل لي نكتة من فضلك
       - قل لي نكتة الآن
       - احكيلي نكتة
+  - intent: ask_book_by_title_en
+    examples: |
+      - Tell me about the book [The cashless society](book_title)
+      - I want details on [Political and social philosophy](book_title)
+      - What is the book [The cashless society](book_title) about?
+
+  - intent: ask_book_by_author_en
+    examples: |
+      - Recommend me books by [Hendrickson, Robert A., 1923-](author)
+      - Show me books written by [King, Jessie Charles](author)
+      - Any books by [James A. McGilvray](author)?
+
+  - intent: ask_book_by_subject_en
+    examples: |
+      - Do you have books on [Credit](subject)?
+      - Recommend books about [Political science](subject)
+      - I want books on [Political ethics](subject)
+      - Any books on [Political ethics](subject)?
+      - Ok, I want books on [Political ethics](subject)
+      - Show me books on [Political ethics](subject)
+      - Ok, I want some [History](subject) books
+
+  - intent: ask_book_by_language_en
+    examples: |
+      - Show me books in [English](language)
+      - Do you have any books in [Arabic](language)?
+      - I want books in [en](language)
+
+  - intent: ask_book_by_title_ar
+    examples: |
+      - أخبرني عن الكتاب [المجتمع الخالي من النقد](book_title)
+      - أريد تفاصيل حول [الفلسفة السياسية والاجتماعية](book_title)
+      - ماذا يتعلق الكتاب [المجتمع الخالي من النقد](book_title)؟
+      - أريد تفاصيل حول [الفلسفة السياسية والاجتماعية](book_title)
+      - بدي أعرف عن الكتاب [المجتمع الخالي من النقد](book_title)
+      - مين كاتب الكتاب [المجتمع الخالي من النقد](book_title)
+
+  - intent: ask_book_by_author_ar
+    examples: |
+      - انصحني بكتب لـ [هندريكسون، روبرت أيه، 1923-](author)
+      - أرني الكتب التي كتبها [كينغ، جيسي تشارلز](author)
+      - هل هناك كتب لـ [جيمس أ. ماكجيلفراي](author)؟
+      - بدي كتب للكاتب [جيمس أ. ماكجيلفراي](author)
+      - اقترحلي كتب للكاتب [جيمس أ. ماكجيلفراي](author)
+      - اقترحلي كتب ل [جيمس أ. ماكجيلفراي](author)
+
+  - intent: ask_book_by_subject_ar
+    examples: |
+      - هل لديك كتب عن [الائتمان](subject)؟
+      - انصحني بكتب حول [العلوم السياسية](subject)
+      - أريد كتب عن [الأخلاق السياسية](subject)
+      - هل هناك كتب عن [الأخلاق السياسية](subject)؟
+      - حسنًا، أريد كتبًا عن [الأخلاق السياسية](subject)
+      - أرني كتبًا عن [الأخلاق السياسية](subject)
+      - حسنًا، أريد بعض الكتب عن [التاريخ](subject)
+      - أرني كتبًا عن [التاريخ](subject)
+      - بدي كتب عن [التاريخ](subject)
+      - هاتلك كتب عن [التاريخ](subject)
+      - بدي اقرا كتب عن [التاريخ](subject)
+      - بدي كتب [تاريخ](subject)
+
+  - intent: ask_book_by_language_ar
+    examples: |
+      - أرني الكتب باللغة [الإنجليزية](language)
+      - هل لديك أي كتب باللغة [العربية](language)؟
+      - أريد كتب باللغة [en](language)
+      - بدي كتب باللغة [en](language)
+
+  - intent: request_book_recommendation_en
+    examples: |
+      - I want some book recommendations
+      - Can you recommend some books?
+      - Suggest me some books
+      - What are some good books to read?
+      - Give me book recommendations
+      - Recommend me some books
+      - Suggest some books to read
+      - What books should I read?
+      - What are some good books to read?
+      - Can you suggest some books?
+      - What books do you recommend?
+      - What books should I read?
+      - What are some good books to read?
+      - Can you suggest some books?
+      - What books do you recommend?
+
+  - intent: request_book_recommendation_ar
+    examples: |
+      - أريد بعض توصيات الكتب
+      - هل يمكنك توصية بعض الكتب؟
+      - اقترح لي بعض الكتب
+      - ما هي بعض الكتب الجيدة للقراءة؟
+      - أعطني توصيات الكتب
+      - اقترح لي بعض الكتب
+      - اقترح بعض الكتب للقراءة
+      - ما هي الكتب التي يجب علي قراءتها؟
+      - ما هي بعض الكتب الجيدة للقراءة؟
+      - هل يمكنك اقتراح بعض الكتب؟
+      - ما هي الكتب التي توصي بها؟
+      - ما هي الكتب التي يجب علي قراءتها؟
+      - ما هي بعض الكتب الجيدة للقراءة؟
+      - هل يمكنك اقتراح بعض الكتب؟
+      - ما هي الكتب التي توصي بها؟
+      - اقترحلك شوية كتب
+      - اقترحلي كتب
+      - اقترحلي كتب للقراءة
+      - هاتلي كتب
+      - هاتلي شوية كتب
+      - بدي كتب
