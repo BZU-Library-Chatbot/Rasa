@@ -1,2 +1,4 @@
 .rasa
 models
+*.dot
+*.pyc

@@ -45,7 +45,7 @@ nlu:
       - طبعاً
       - نعم بالتأكيد
       - نعم صحيح
-  - intent: bot_challenge-en
+  - intent: bot_challenge_en
     examples: |
       - are you a bot?
       - are you a human?
@@ -78,7 +78,7 @@ nlu:
       - are you a human or a chatbot?
       - what is your name?
       - what is your real name?
-  - intent: bot_challenge-ar
+  - intent: bot_challenge_ar
     examples: |
       - هل أنت بوت؟
       - هل أنت إنسان؟
@@ -294,6 +294,10 @@ nlu:
       - طاب يومك
       - طاب مساؤك
       - طاب صباحك
+      - السلام عليكم
+      - صباح النور
+      - سلام
+      - سلامات
   - intent: deny-en
     examples: |
       - no
@@ -346,7 +350,7 @@ nlu:
       - how are you feeling
       - how are you today
       - How are you?
-
+      - how are you today ?
   - intent: chitchat_ar
     examples: |
       - أهلا يا صديق كيف حالك؟
@@ -359,7 +363,7 @@ nlu:
       - كيف الأمور؟
       - كيف حالك اليوم؟
       - كيف حالك
-  - intent: goodbye-en
+  - intent: goodbye_en
     examples: |
       - Bye
       - Goodbye
@@ -381,7 +385,7 @@ nlu:
       - I'm leaving you
       - see you
       - see you later alligator
-  - intent: goodbye-ar
+  - intent: goodbye_ar
     examples: |
       - وداعًا
       - إلى اللقاء
@@ -411,18 +415,6 @@ nlu:
       - tell me a funny story
       - tell me a joke please
       - tell me a joke now
-      - tell me a joke please
-      - tell me a joke now
-      - tell me a joke
-      - say a joke
-      - tell me something funny
-      - say something funny
-      - make me laugh
-      - tell me a funny story
-      - tell me a joke please
-      - tell me a joke now
-      - tell me a joke please
-      - tell me a joke now
   - intent: ask_joke_ar
     examples: |
       - قل لي نكتة
@@ -433,31 +425,18 @@ nlu:
       - قل لي قصة مضحكة
       - قل لي نكتة من فضلك
       - قل لي نكتة الآن
-      - قل لي نكتة من فضلك
-      - قل لي نكتة الآن
-      - قل لي نكتة
-      - قل نكتة
-      - قل لي شيئًا مضحكًا
-      - قل شيئًا مضحكًا
-      - اجعلني أضحك
-      - قل لي قصة مضحكة
-      - قل لي نكتة من فضلك
-      - قل لي نكتة الآن
-      - قل لي نكتة من فضلك
-      - قل لي نكتة الآن
       - احكيلي نكتة
+      - خرفني نكتة
   - intent: ask_book_by_title_en
     examples: |
       - Tell me about the book [The cashless society](book_title)
       - I want details on [Political and social philosophy](book_title)
       - What is the book [The cashless society](book_title) about?
-
   - intent: ask_book_by_author_en
     examples: |
       - Recommend me books by [Hendrickson, Robert A., 1923-](author)
       - Show me books written by [King, Jessie Charles](author)
       - Any books by [James A. McGilvray](author)?
-
   - intent: ask_book_by_subject_en
     examples: |
       - Do you have books on [Credit](subject)?
@@ -467,22 +446,19 @@ nlu:
       - Ok, I want books on [Political ethics](subject)
       - Show me books on [Political ethics](subject)
       - Ok, I want some [History](subject) books
-
+      - I want to read something about [history]{"entity": "subject", "value": "History"} for example
   - intent: ask_book_by_language_en
     examples: |
       - Show me books in [English](language)
       - Do you have any books in [Arabic](language)?
       - I want books in [en](language)
-
   - intent: ask_book_by_title_ar
     examples: |
       - أخبرني عن الكتاب [المجتمع الخالي من النقد](book_title)
       - أريد تفاصيل حول [الفلسفة السياسية والاجتماعية](book_title)
       - ماذا يتعلق الكتاب [المجتمع الخالي من النقد](book_title)؟
-      - أريد تفاصيل حول [الفلسفة السياسية والاجتماعية](book_title)
       - بدي أعرف عن الكتاب [المجتمع الخالي من النقد](book_title)
       - مين كاتب الكتاب [المجتمع الخالي من النقد](book_title)
-
   - intent: ask_book_by_author_ar
     examples: |
       - انصحني بكتب لـ [هندريكسون، روبرت أيه، 1923-](author)
@@ -491,7 +467,6 @@ nlu:
       - بدي كتب للكاتب [جيمس أ. ماكجيلفراي](author)
       - اقترحلي كتب للكاتب [جيمس أ. ماكجيلفراي](author)
       - اقترحلي كتب ل [جيمس أ. ماكجيلفراي](author)
-
   - intent: ask_book_by_subject_ar
     examples: |
       - هل لديك كتب عن [الائتمان](subject)؟
@@ -506,14 +481,12 @@ nlu:
       - هاتلك كتب عن [التاريخ](subject)
       - بدي اقرا كتب عن [التاريخ](subject)
       - بدي كتب [تاريخ](subject)
-
   - intent: ask_book_by_language_ar
     examples: |
       - أرني الكتب باللغة [الإنجليزية](language)
       - هل لديك أي كتب باللغة [العربية](language)؟
       - أريد كتب باللغة [en](language)
       - بدي كتب باللغة [en](language)
-
   - intent: request_book_recommendation_en
     examples: |
       - I want some book recommendations
@@ -524,14 +497,9 @@ nlu:
       - Recommend me some books
       - Suggest some books to read
       - What books should I read?
-      - What are some good books to read?
       - Can you suggest some books?
       - What books do you recommend?
-      - What books should I read?
-      - What are some good books to read?
-      - Can you suggest some books?
-      - What books do you recommend?
-
+      - suggest some readings
   - intent: request_book_recommendation_ar
     examples: |
       - أريد بعض توصيات الكتب
@@ -539,14 +507,8 @@ nlu:
       - اقترح لي بعض الكتب
       - ما هي بعض الكتب الجيدة للقراءة؟
       - أعطني توصيات الكتب
-      - اقترح لي بعض الكتب
       - اقترح بعض الكتب للقراءة
       - ما هي الكتب التي يجب علي قراءتها؟
-      - ما هي بعض الكتب الجيدة للقراءة؟
-      - هل يمكنك اقتراح بعض الكتب؟
-      - ما هي الكتب التي توصي بها؟
-      - ما هي الكتب التي يجب علي قراءتها؟
-      - ما هي بعض الكتب الجيدة للقراءة؟
       - هل يمكنك اقتراح بعض الكتب؟
       - ما هي الكتب التي توصي بها؟
       - اقترحلك شوية كتب
@@ -555,3 +517,40 @@ nlu:
       - هاتلي كتب
       - هاتلي شوية كتب
       - بدي كتب
+      - بدي كتب للقراءة
+  - intent: ask_more_books_en
+    examples: |
+      - Can you show me more books?
+      - I want to see more books
+      - Show me more books
+      - I want more books
+      - I need more
+      - Show me more
+      - More books please
+      - More books
+      - more
+      - ok, can you suggest more
+  - intent: ask_more_books_ar
+    examples: |
+      - هل يمكنك عرض المزيد من الكتب؟
+      - أريد أن أرى المزيد من الكتب
+      - أرني المزيد من الكتب
+      - أريد المزيد من الكتب
+      - أحتاج المزيد
+      - أرني المزيد
+      - المزيد من الكتب من فضلك
+      - المزيد من الكتب
+      - المزيد
+      - أريد المزيد
+      - بدي كمان كتب
+      - بدي المزيد
+      - بدي المزيد من الكتب
+      - كمان كتب
+      - هات كمان
+      - هات المزيد
+      - كمان
+      - كمل
+      - كملي
+      - اعطيني كمان
+      - اعطيني المزيد
+      - بدي كمان

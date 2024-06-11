@@ -88,19 +88,29 @@ class ActionProvideBookRecommendation(Action):
         if language:
             filtered_books = [book for book in filtered_books if book['Language'].lower() == language.lower()]
 
-        # Get up to 5 random book recommendations from filtered books
-        recommendations = filtered_books[:5]
+        # Get up to 10 random book recommendations from filtered books
+        recommendations = filtered_books[:10]
         
         # Generate response
-        if detected_language == 'ar':
+        if detected_language == 'ar' and len(recommendations) > 0:
             response = "إليك بعض توصيات الكتب:\n\n"
-        else:
+        elif detected_language == 'en' and len(recommendations) > 0:
             response = "Here are some book recommendations:\n\n"
+        else:
+            if detected_language == 'ar':
+                response = "آسف، لم أتمكن من العثور على توصيات لكتب تناسب طلبك."
+            else:
+                response = "Sorry, I couldn't find any book recommendations that match your request."
 
-        counter = 1
-        for book in recommendations:
-            response += f"{counter}. {book['Title']} by {', '.join(book['Author'])}\n\n"
-            counter += 1
+        if len(recommendations) >= 0:    
+            counter = 1
+            for book in recommendations:
+                print("book", book)
+                if detected_language == 'ar':
+                    response += f"{counter}. {book['Title']} للكاتب: {', '.join(book['Author'])}\n\n"
+                else:
+                    response += f"{counter}. {book['Title']} author: {', '.join(book['Author'])}\n\n"
+                counter += 1
 
 
         dispatcher.utter_message(text=response)

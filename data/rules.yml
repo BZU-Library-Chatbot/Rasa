@@ -3,22 +3,22 @@ version: "3.1"
 rules:
   - rule: Say goodbye anytime the user says goodbye (en)
     steps:
-      - intent: goodbye-en
+      - intent: goodbye_en
       - action: utter_goodbye_en
 
   - rule: Say goodbye anytime the user says goodbye (ar)
     steps:
-      - intent: goodbye-ar
+      - intent: goodbye_ar
       - action: utter_goodbye_ar
 
   - rule: Say 'I am a bot' anytime the user challenges (en)
     steps:
-      - intent: bot_challenge-en
+      - intent: bot_challenge_en
       - action: utter_iamabot_en
 
   - rule: Say 'I am a bot' anytime the user challenges (ar)
     steps:
-      - intent: bot_challenge-ar
+      - intent: bot_challenge_ar
       - action: utter_iamabot_ar
 
   # - rule: Handle fallback en
