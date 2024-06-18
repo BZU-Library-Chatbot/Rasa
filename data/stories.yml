@@ -174,23 +174,23 @@ stories:
       - intent: ask_more_books_ar
       - action: action_provide_book_recommendation
 
-- story: interactive_story_1
-  steps:
-  - intent: greet_en
-  - action: utter_greet_en
-  - intent: chitchat_en
-  - action: utter_chitchat_en
-  - intent: request_book_recommendation_en
-  - action: utter_request_book_recommendation_en
-  - intent: stop-en
-    entities:
-    - subject: History
-  - slot_was_set:
-    - subject: History
-  - intent: ask_book_by_subject_en
-    entities:
-    - subject: History
-  - action: action_provide_book_recommendation
-  - intent: request_book_recommendation_en
-  - intent: ask_more_books_en
-  - action: action_provide_book_recommendation
+  - story: interactive_story_1
+    steps:
+      - intent: greet_en
+      - action: utter_greet_en
+      - intent: chitchat_en
+      - action: utter_chitchat_en
+      - intent: request_book_recommendation_en
+      - action: utter_request_book_recommendation_en
+      - intent: stop-en
+        entities:
+          - subject: History
+      - slot_was_set:
+          - subject: History
+      - intent: ask_book_by_subject_en
+        entities:
+          - subject: History
+      - action: action_provide_book_recommendation
+      - intent: request_book_recommendation_en
+      - intent: ask_more_books_en
+      - action: action_provide_book_recommendation
