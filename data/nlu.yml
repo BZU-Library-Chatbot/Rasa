@@ -1,556 +1,523 @@
 version: "3.1"
 nlu:
-  - intent: affirm_en
-    examples: |
-      - yeah
-      - correct
-      - ye
-      - uh yes
-      - let's do it
-      - um yes
-      - yes knocking
-      - that's correct
-      - yes yes
-      - right
-      - yea
-      - yes
-      - yes right
-      - yes and i dont care
-      - right on
-      - i love that
-      - heck yeah
-      - sure
-      - yes!
-      - yep!
-      - yep
-      - sure!
-      - absolutely
-      - definitely
-      - of course
-      - aye
-      - ok
-      - okay
-      - fine
-      - got it
-  - intent: affirm_ar
-    examples: |
-      - أوافق
-      - نعم
-      - بالتأكيد
-      - بالطبع
-      - صحيح
-      - أجل
-      - نعم، من فضلك
-      - حسناً
-      - طبعاً
-      - نعم بالتأكيد
-      - نعم صحيح
-  - intent: bot_challenge_en
-    examples: |
-      - are you a bot?
-      - are you a human?
-      - am I talking to a bot?
-      - am I talking to a human?
-      - are you real?
-      - are you a real person?
-      - are you an AI?
-      - who are you?
-      - are you a chatbot?
-      - are you a robot?
-      - are you a human or a bot?
-      - are you a human or a machine?
-      - are you a human or a computer?
-      - what is your real identity?
-      - are you a living being?
-      - are you a person?
-      - are you a machine?
-      - are you a computer?
-      - are you a person or a machine?
-      - are you a person or a computer?
-      - are you a machine or a computer?
-      - are you a person or a robot?
-      - are you a machine or a robot?
-      - are you a computer or a robot?
-      - are you a person or a chatbot?
-      - are you a machine or a chatbot?
-      - are you a computer or a chatbot?
-      - are you a robot or a chatbot?
-      - are you a human or a chatbot?
-      - what is your name?
-      - what is your real name?
-  - intent: bot_challenge_ar
-    examples: |
-      - هل أنت بوت؟
-      - هل أنت إنسان؟
-      - هل أتحدث إلى بوت؟
-      - هل أتحدث إلى إنسان؟
-      - هل أنت حقيقي؟
-      - هل أنت شخص حقيقي؟
-      - هل أنت ذكاء اصطناعي؟
-      - من أنت؟
-      - هل أنت شات بوت؟
-      - هل أنت روبوت؟
-      - هل أنت إنسان أم بوت؟
-      - هل أنت إنسان أم آلة؟
-      - هل أنت إنسان أم كمبيوتر؟
-      - ما هو هويتك الحقيقية؟
-      - هل أنت كائن حي؟
-      - هل أنت شخص؟
-      - هل أنت آلة؟
-      - هل أنت كمبيوتر؟
-      - هل أنت شخص أم آلة؟
-      - هل أنت شخص أم كمبيوتر؟
-      - هل أنت آلة أم كمبيوتر؟
-      - هل أنت شخص أم روبوت؟
-      - هل أنت آلة أم روبوت؟
-      - هل أنت كمبيوتر أم روبوت؟
-  - intent: stop-en
-    examples: |
-      - ok then you cant help me
-      - that was shit, you're not helping
-      - you can't help me
-      - you can't help me with what i need
-      - i guess you can't help me then
-      - ok i guess you can't help me
-      - that's not what i want
-      - ok, but that doesnt help me
-      - this is leading to nothing
-      - this conversation is not really helpful
-      - you cannot help me with what I want
-      - I think you cant help me
-      - hm i don't think you can do what i want
-      - stop
-      - stop go back
-      - do you get anything?
-      - and you call yourself bot company? pff
-      - and that's it?
-      - nothing else?
-      - I want to stop
-      - quit
-      - end this
-      - end the conversation
-      - that's enough
-  - intent: stop_ar
-    examples: |
-      - حسناً، فأنت لا تستطيع مساعدتي
-      - كان هذا سيئاً، أنت لا تساعدني
-      - لا يمكنك مساعدتي
-      - لا يمكنك مساعدتي فيما أحتاجه
-      - أعتقد أنك لا تستطيع مساعدتي بعد الآن
-      - حسناً، أعتقد أنك لا تستطيع مساعدتي
-      - هذا ليس ما أريد
-      - حسناً، لكن هذا لا يساعدني
-      - هذا لا يؤدي إلى شيء
-      - هذه المحادثة لا تفيد حقاً
-      - لا يمكنك مساعدتي فيما أريده
-      - أعتقد أنك لا تستطيع مساعدتي
-      - هم، لا أعتقد أنك تستطيع فعل ما أريده
-      - توقف
-      - توقف وارجع
-      - هل فهمت شيئا؟
-      - وأنت تطلق على نفسك شركة روبوت؟ فف
-      - وهل هذا كل شيء؟
-      - لا شيء آخر؟
-      - أريد التوقف
-      - انسحب
-      - انهي هذا
-      - انهي المحادثة
-      - هذا كافٍ
-  - intent: thankyou-en
-    examples: |
-      - um thank you good bye
-      - okay cool uh good bye thank you
-      - okay thank you good bye
-      - you rock
-      - and thats all thank you and good bye
-      - thank you and good bye
-      - sorry about my mistakes thank you good bye
-      - noise thank you good bye
-      - thank you goodbye noise
-      - okay thank you goodbye
-      - uh thank you good bye
-      - thank you goodbye
-      - thank you goodbye noise thank you goodbye
-      - breath thank you goodbye
-      - thank you
-      - okay thank you
-      - thanks goodbye
-      - ah thank you goodbye
-      - thank you noise
-      - thank you good bye
-      - breath thank you very much goodbye
-      - thanks
-      - noise thank you goodbye
-      - unintelligible thank you goodbye
-      - uh okay thank you good bye
-      - thank you bye
-      - um okay thank you good bye
-      - cool thanks
-      - I appreciate it
-      - much obliged
-      - thank you very much
-      - many thanks
-  - intent: thankyou_ar
-    examples: |
-      - أمم شكراً وداعاً
-      - حسناً، بارد، آه وداعاً شكراً
-      - حسناً شكراً وداعاً
-      - أنت رائع
-      - وهذا كل شيء شكراً وداعاً
-      - شكراً وداعاً
-      - آسف على أخطائي شكراً وداعاً
-      - ضجيج شكراً وداعاً
-      - شكراً وداعاً ضجيج
-      - آه شكراً وداعاً
-      - شكراً وداعاً ضجيج شكراً وداعاً
-      - تنفس شكراً وداعاً
-      - شكراً
-      - حسناً شكراً
-      - شكراً ضجيج
-      - تنفس شكراً جزيلًا وداعاً
-      - غير مفهوم شكراً وداعاً
-      - آه حسناً شكراً وداعاً
-      - أمم حسناً شكراً وداعاً
-      - بارد شكراً
-      - أقدر ذلك
-      - ممتن جداً
-      - شكراً جزيلاً
-      - شكراً كثيراً
-  - intent: greet_en
-    examples: |
-      - Hi
-      - Hey
-      - Hi bot
-      - Hey bot
-      - Hello
-      - Good morning
-      - hi again
-      - hi folks
-      - hi Mister
-      - hi pal!
-      - hi there
-      - greetings
-      - hello everybody
-      - hello is anybody there
-      - hello robot
-      - hallo
-      - heeey
-      - hi hi
-      - hey
-      - hey hey
-      - hello there
-      - hi
-      - hello
-      - yo
-      - hola
-      - hi?
-      - hey bot!
-      - hello friend
-      - howdy
-      - hi all
-      - hey there
-      - hey, what's up?
-      - good day
-      - Good evening
-      - Good afternoon
-      - morning
-      - evening
-      - afternoon
-      - gm
-      - ge
-  - intent: greet_ar
-    examples: |
-      - مرحبا
-      - ياهلا
-      - مرحبا بك، بوت
-      - ياهلا بك، بوت
-      - السلام عليكم
-      - صباح الخير
-      - مرحبا مرة أخرى
-      - مرحبا بالجميع
-      - مرحبا يا سيدي
-      - مرحبا يا صديقي
-      - مرحبا هناك
-      - تحياتي
-      - هل من وجود؟
-      - مرحبا صديقي الآلي
-      - هالو
-      - هييييه
-      - مرحبا مرحبا
-      - ياهلا ياهلا
-      - السلام
-      - مرحبا؟
-      - مرحبا صديقي
-      - كيف الحال؟
-      - مساء الخير
-      - مساء
-      - صباح
-      - هاي
-      - هولا
-      - هايات
-      - تحية
-      - بونسوار
-      - اهلا
-      - طاب يومك
-      - طاب مساؤك
-      - طاب صباحك
-      - السلام عليكم
-      - صباح النور
-      - سلام
-      - سلامات
-  - intent: deny-en
-    examples: |
-      - no
-      - no new selection
-      - no thanks
-      - no thank you
-      - uh no
-      - breath no
-      - do you have something else
-      - no this does not work for me
-      - nope
-      - nah
-      - not really
-      - I don't think so
-      - absolutely not
-      - no way
-      - certainly not
-      - no no
-      - no no no
-      - no no no no
-  - intent: deny-ar
-    examples: |
-      - لا
-      - لا اختيار جديد
-      - لا شكرا
-      - لا شكرا لك
-      - هل لديك شيء آخر؟
-      - لا، هذا لا يعمل بالنسبة لي
-      - ليس حقيقيا
-      - لا أعتقد ذلك
-      - بالتأكيد لا
-      - لا يمكن
-      - لا لا
-      - لا لا لا
-      - لا لا لا لا
-  - intent: chitchat_en
-    examples: |
-      - Ahoy matey how are you?
-      - are you alright
-      - are you having a good day
-      - Are you ok?
-      - are you okay
-      - Do you feel good?
-      - how are things going
-      - how are things with you?
-      - How are things?
-      - how are you
-      - how are you doing
-      - how are you doing this morning
-      - how are you feeling
-      - how are you today
-      - How are you?
-      - how are you today ?
-  - intent: chitchat_ar
-    examples: |
-      - أهلا يا صديق كيف حالك؟
-      - هل أنت بخير؟
-      - هل لديك يوم جيد؟
-      - هل تشعر بالراحة؟
-      - كيف تسير الأمور؟
-      - كيف حالك؟
-      - كيف تسير الأمور معك؟
-      - كيف الأمور؟
-      - كيف حالك اليوم؟
-      - كيف حالك
-  - intent: goodbye_en
-    examples: |
-      - Bye
-      - Goodbye
-      - See you later
-      - Bye bye
-      - Catch you later
-      - Have a good day
-      - See you soon
-      - I'm leaving
-      - Talk to you later
-      - I'm off
-      - Gotta go
-      - I'm out
-      - Farewell
-      - Take care
-      - I'm leaving now
-      - I'm off now
-      - I'm out now
-      - I'm leaving you
-      - see you
-      - see you later alligator
-  - intent: goodbye_ar
-    examples: |
-      - وداعًا
-      - إلى اللقاء
-      - أراك لاحقًا
-      - وداعًا وداعًا
-      - أتمنى لك يومًا سعيدًا
-      - أراك قريبًا
-      - أنا ذاهب
-      - أتحدث إليك لاحقًا
-      - أنا خارج
-      - يجب أن أذهب
-      - اعتني بنفسك
-      - أنا مغادر الآن
-      - أنا ذاهب الآن
-      - أنا خارج الآن
-      - أنا مغادرك الآن
-      - أراك
-      - أراك في وقت لاحق يا تمساح
-      - باي
-  - intent: ask_joke_en
-    examples: |
-      - tell me a joke
-      - say a joke
-      - tell me something funny
-      - say something funny
-      - make me laugh
-      - tell me a funny story
-      - tell me a joke please
-      - tell me a joke now
-  - intent: ask_joke_ar
-    examples: |
-      - قل لي نكتة
-      - قل نكتة
-      - قل لي شيئًا مضحكًا
-      - قل شيئًا مضحكًا
-      - اجعلني أضحك
-      - قل لي قصة مضحكة
-      - قل لي نكتة من فضلك
-      - قل لي نكتة الآن
-      - احكيلي نكتة
-      - خرفني نكتة
-  - intent: ask_book_by_title_en
-    examples: |
-      - Tell me about the book [The cashless society](book_title)
-      - I want details on [Political and social philosophy](book_title)
-      - What is the book [The cashless society](book_title) about?
-  - intent: ask_book_by_author_en
-    examples: |
-      - Recommend me books by [Hendrickson, Robert A., 1923-](author)
-      - Show me books written by [King, Jessie Charles](author)
-      - Any books by [James A. McGilvray](author)?
-  - intent: ask_book_by_subject_en
-    examples: |
-      - Do you have books on [Credit](subject)?
-      - Recommend books about [Political science](subject)
-      - I want books on [Political ethics](subject)
-      - Any books on [Political ethics](subject)?
-      - Ok, I want books on [Political ethics](subject)
-      - Show me books on [Political ethics](subject)
-      - Ok, I want some [History](subject) books
-      - I want to read something about [history]{"entity": "subject", "value": "History"} for example
-  - intent: ask_book_by_language_en
-    examples: |
-      - Show me books in [English](language)
-      - Do you have any books in [Arabic](language)?
-      - I want books in [en](language)
-  - intent: ask_book_by_title_ar
-    examples: |
-      - أخبرني عن الكتاب [المجتمع الخالي من النقد](book_title)
-      - أريد تفاصيل حول [الفلسفة السياسية والاجتماعية](book_title)
-      - ماذا يتعلق الكتاب [المجتمع الخالي من النقد](book_title)؟
-      - بدي أعرف عن الكتاب [المجتمع الخالي من النقد](book_title)
-      - مين كاتب الكتاب [المجتمع الخالي من النقد](book_title)
-  - intent: ask_book_by_author_ar
-    examples: |
-      - انصحني بكتب لـ [هندريكسون، روبرت أيه، 1923-](author)
-      - أرني الكتب التي كتبها [كينغ، جيسي تشارلز](author)
-      - هل هناك كتب لـ [جيمس أ. ماكجيلفراي](author)؟
-      - بدي كتب للكاتب [جيمس أ. ماكجيلفراي](author)
-      - اقترحلي كتب للكاتب [جيمس أ. ماكجيلفراي](author)
-      - اقترحلي كتب ل [جيمس أ. ماكجيلفراي](author)
-  - intent: ask_book_by_subject_ar
-    examples: |
-      - هل لديك كتب عن [الائتمان](subject)؟
-      - انصحني بكتب حول [العلوم السياسية](subject)
-      - أريد كتب عن [الأخلاق السياسية](subject)
-      - هل هناك كتب عن [الأخلاق السياسية](subject)؟
-      - حسنًا، أريد كتبًا عن [الأخلاق السياسية](subject)
-      - أرني كتبًا عن [الأخلاق السياسية](subject)
-      - حسنًا، أريد بعض الكتب عن [التاريخ](subject)
-      - أرني كتبًا عن [التاريخ](subject)
-      - بدي كتب عن [التاريخ](subject)
-      - هاتلك كتب عن [التاريخ](subject)
-      - بدي اقرا كتب عن [التاريخ](subject)
-      - بدي كتب [تاريخ](subject)
-  - intent: ask_book_by_language_ar
-    examples: |
-      - أرني الكتب باللغة [الإنجليزية](language)
-      - هل لديك أي كتب باللغة [العربية](language)؟
-      - أريد كتب باللغة [en](language)
-      - بدي كتب باللغة [en](language)
-  - intent: request_book_recommendation_en
-    examples: |
-      - I want some book recommendations
-      - Can you recommend some books?
-      - Suggest me some books
-      - What are some good books to read?
-      - Give me book recommendations
-      - Recommend me some books
-      - Suggest some books to read
-      - What books should I read?
-      - Can you suggest some books?
-      - What books do you recommend?
-      - suggest some readings
-  - intent: request_book_recommendation_ar
-    examples: |
-      - أريد بعض توصيات الكتب
-      - هل يمكنك توصية بعض الكتب؟
-      - اقترح لي بعض الكتب
-      - ما هي بعض الكتب الجيدة للقراءة؟
-      - أعطني توصيات الكتب
-      - اقترح بعض الكتب للقراءة
-      - ما هي الكتب التي يجب علي قراءتها؟
-      - هل يمكنك اقتراح بعض الكتب؟
-      - ما هي الكتب التي توصي بها؟
-      - اقترحلك شوية كتب
-      - اقترحلي كتب
-      - اقترحلي كتب للقراءة
-      - هاتلي كتب
-      - هاتلي شوية كتب
-      - بدي كتب
-      - بدي كتب للقراءة
-  - intent: ask_more_books_en
-    examples: |
-      - Can you show me more books?
-      - I want to see more books
-      - Show me more books
-      - I want more books
-      - I need more
-      - Show me more
-      - More books please
-      - More books
-      - more
-      - ok, can you suggest more
-  - intent: ask_more_books_ar
-    examples: |
-      - هل يمكنك عرض المزيد من الكتب؟
-      - أريد أن أرى المزيد من الكتب
-      - أرني المزيد من الكتب
-      - أريد المزيد من الكتب
-      - أحتاج المزيد
-      - أرني المزيد
-      - المزيد من الكتب من فضلك
-      - المزيد من الكتب
-      - المزيد
-      - أريد المزيد
-      - بدي كمان كتب
-      - بدي المزيد
-      - بدي المزيد من الكتب
-      - كمان كتب
-      - هات كمان
-      - هات المزيد
-      - كمان
-      - كمل
-      - كملي
-      - اعطيني كمان
-      - اعطيني المزيد
-      - بدي كمان
+- intent: affirm_en
+  examples: |
+    - yeah
+    - correct
+    - ye
+    - uh yes
+    - let's do it
+    - um yes
+    - yes knocking
+    - that's correct
+    - yes yes
+    - right
+    - yea
+    - yes
+    - yes right
+    - yes and i dont care
+    - right on
+    - i love that
+    - heck yeah
+    - sure
+    - yes!
+    - yep!
+    - yep
+    - sure!
+    - absolutely
+    - definitely
+    - of course
+    - aye
+    - ok
+    - okay
+    - fine
+    - got it
+- intent: affirm_ar
+  examples: |
+    - أوافق
+    - نعم
+    - بالتأكيد
+    - بالطبع
+    - صحيح
+    - أجل
+    - نعم، من فضلك
+    - حسناً
+    - طبعاً
+    - نعم بالتأكيد
+    - نعم صحيح
+- intent: bot_challenge_en
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you real?
+    - are you a real person?
+    - are you an AI?
+    - who are you?
+    - are you a chatbot?
+    - are you a robot?
+    - are you a human or a bot?
+    - are you a human or a machine?
+    - are you a human or a computer?
+    - what is your real identity?
+    - are you a living being?
+    - are you a person?
+    - are you a machine?
+    - are you a computer?
+    - are you a person or a machine?
+    - are you a person or a computer?
+    - are you a machine or a computer?
+    - are you a person or a robot?
+    - are you a machine or a robot?
+    - are you a computer or a robot?
+    - are you a person or a chatbot?
+    - are you a machine or a chatbot?
+    - are you a computer or a chatbot?
+    - are you a robot or a chatbot?
+    - are you a human or a chatbot?
+    - what is your name?
+    - what is your real name?
+- intent: bot_challenge_ar
+  examples: |
+    - هل أنت بوت؟
+    - هل أنت إنسان؟
+    - هل أتحدث إلى بوت؟
+    - هل أتحدث إلى إنسان؟
+    - هل أنت حقيقي؟
+    - هل أنت شخص حقيقي؟
+    - هل أنت ذكاء اصطناعي؟
+    - من أنت؟
+    - هل أنت شات بوت؟
+    - هل أنت روبوت؟
+    - هل أنت إنسان أم بوت؟
+    - هل أنت إنسان أم آلة؟
+    - هل أنت إنسان أم كمبيوتر؟
+    - ما هو هويتك الحقيقية؟
+    - هل أنت كائن حي؟
+    - هل أنت شخص؟
+    - هل أنت آلة؟
+    - هل أنت كمبيوتر؟
+    - هل أنت شخص أم آلة؟
+    - هل أنت شخص أم كمبيوتر؟
+    - هل أنت آلة أم كمبيوتر؟
+    - هل أنت شخص أم روبوت؟
+    - هل أنت آلة أم روبوت؟
+    - هل أنت كمبيوتر أم روبوت؟
+- intent: stop_en
+  examples: |
+    - ok then you cant help me
+    - that was shit, you're not helping
+    - you can't help me
+    - you can't help me with what i need
+    - i guess you can't help me then
+    - ok i guess you can't help me
+    - that's not what i want
+    - ok, but that doesnt help me
+    - this is leading to nothing
+    - this conversation is not really helpful
+    - you cannot help me with what I want
+    - I think you cant help me
+    - hm i don't think you can do what i want
+    - stop
+    - stop go back
+    - do you get anything?
+    - and you call yourself bot company? pff
+    - and that's it?
+    - nothing else?
+    - I want to stop
+    - quit
+    - end this
+    - end the conversation
+    - that's enough
+- intent: stop_ar
+  examples: |
+    - حسناً، فأنت لا تستطيع مساعدتي
+    - كان هذا سيئاً، أنت لا تساعدني
+    - لا يمكنك مساعدتي
+    - لا يمكنك مساعدتي فيما أحتاجه
+    - أعتقد أنك لا تستطيع مساعدتي بعد الآن
+    - حسناً، أعتقد أنك لا تستطيع مساعدتي
+    - هذا ليس ما أريد
+    - حسناً، لكن هذا لا يساعدني
+    - هذا لا يؤدي إلى شيء
+    - هذه المحادثة لا تفيد حقاً
+    - لا يمكنك مساعدتي فيما أريده
+    - أعتقد أنك لا تستطيع مساعدتي
+    - هم، لا أعتقد أنك تستطيع فعل ما أريده
+    - توقف
+    - توقف وارجع
+    - هل فهمت شيئا؟
+    - وأنت تطلق على نفسك شركة روبوت؟ فف
+    - وهل هذا كل شيء؟
+    - لا شيء آخر؟
+    - أريد التوقف
+    - انسحب
+    - انهي هذا
+    - انهي المحادثة
+    - هذا كافٍ
+- intent: thankyou-en
+  examples: |
+    - um thank you good bye
+    - okay cool uh good bye thank you
+    - okay thank you good bye
+    - you rock
+    - and thats all thank you and good bye
+    - thank you and good bye
+    - sorry about my mistakes thank you good bye
+    - noise thank you good bye
+    - thank you goodbye noise
+    - okay thank you goodbye
+    - uh thank you good bye
+    - thank you goodbye
+    - thank you goodbye noise thank you goodbye
+    - breath thank you goodbye
+    - thank you
+    - okay thank you
+    - thanks goodbye
+    - ah thank you goodbye
+    - thank you noise
+    - thank you good bye
+    - breath thank you very much goodbye
+    - thanks
+    - noise thank you goodbye
+    - unintelligible thank you goodbye
+    - uh okay thank you good bye
+    - thank you bye
+    - um okay thank you good bye
+    - cool thanks
+    - I appreciate it
+    - much obliged
+    - thank you very much
+    - many thanks
+- intent: thankyou_ar
+  examples: |
+    - أمم شكراً وداعاً
+    - حسناً، بارد، آه وداعاً شكراً
+    - حسناً شكراً وداعاً
+    - أنت رائع
+    - وهذا كل شيء شكراً وداعاً
+    - شكراً وداعاً
+    - آسف على أخطائي شكراً وداعاً
+    - ضجيج شكراً وداعاً
+    - شكراً وداعاً ضجيج
+    - آه شكراً وداعاً
+    - شكراً وداعاً ضجيج شكراً وداعاً
+    - تنفس شكراً وداعاً
+    - شكراً
+    - حسناً شكراً
+    - شكراً ضجيج
+    - تنفس شكراً جزيلًا وداعاً
+    - غير مفهوم شكراً وداعاً
+    - آه حسناً شكراً وداعاً
+    - أمم حسناً شكراً وداعاً
+    - بارد شكراً
+    - أقدر ذلك
+    - ممتن جداً
+    - شكراً جزيلاً
+    - شكراً كثيراً
+- intent: greet_en
+  examples: |
+    - Hi
+    - Hey
+    - Hi bot
+    - Hey bot
+    - Hello
+    - Good morning
+    - hi again
+    - hi folks
+    - hi Mister
+    - hi pal!
+    - hi there
+    - greetings
+    - hello everybody
+    - hello is anybody there
+    - hello robot
+    - hallo
+    - heeey
+    - hi hi
+    - hey
+    - hey hey
+    - hello there
+    - hi
+    - hello
+    - yo
+    - hola
+    - hi?
+    - hey bot!
+    - hello friend
+    - howdy
+    - hi all
+    - hey there
+    - hey, what's up?
+    - good day
+    - Good evening
+    - Good afternoon
+    - morning
+    - evening
+    - afternoon
+    - gm
+    - ge
+- intent: greet_ar
+  examples: |
+    - مرحبا
+    - ياهلا
+    - مرحبا بك، بوت
+    - ياهلا بك، بوت
+    - السلام عليكم
+    - صباح الخير
+    - مرحبا مرة أخرى
+    - مرحبا بالجميع
+    - مرحبا يا سيدي
+    - مرحبا يا صديقي
+    - مرحبا هناك
+    - تحياتي
+    - هل من وجود؟
+    - مرحبا صديقي الآلي
+    - هالو
+    - هييييه
+    - مرحبا مرحبا
+    - ياهلا ياهلا
+    - السلام
+    - مرحبا؟
+    - مرحبا صديقي
+    - كيف الحال؟
+    - مساء الخير
+    - مساء
+    - صباح
+    - هاي
+    - هولا
+    - هايات
+    - تحية
+    - بونسوار
+    - اهلا
+    - طاب يومك
+    - طاب مساؤك
+    - طاب صباحك
+    - صباح النور
+    - سلام
+    - سلامات
+- intent: deny-en
+  examples: |
+    - no
+    - no new selection
+    - no thanks
+    - no thank you
+    - uh no
+    - breath no
+    - do you have something else
+    - no this does not work for me
+    - nope
+    - nah
+    - not really
+    - I don't think so
+    - absolutely not
+    - no way
+    - certainly not
+    - no no
+    - no no no
+    - no no no no
+- intent: deny-ar
+  examples: |
+    - لا
+    - لا اختيار جديد
+    - لا شكرا
+    - لا شكرا لك
+    - هل لديك شيء آخر؟
+    - لا، هذا لا يعمل بالنسبة لي
+    - ليس حقيقيا
+    - لا أعتقد ذلك
+    - بالتأكيد لا
+    - لا يمكن
+    - لا لا
+    - لا لا لا
+    - لا لا لا لا
+- intent: chitchat_en
+  examples: |
+    - Ahoy matey how are you?
+    - are you alright
+    - are you having a good day
+    - Are you ok?
+    - are you okay
+    - Do you feel good?
+    - how are things going
+    - how are things with you?
+    - How are things?
+    - how are you
+    - how are you doing
+    - how are you doing this morning
+    - how are you feeling
+    - how are you today
+    - How are you?
+    - how are you today ?
+- intent: chitchat_ar
+  examples: |
+    - أهلا يا صديق كيف حالك؟
+    - هل أنت بخير؟
+    - هل لديك يوم جيد؟
+    - هل تشعر بالراحة؟
+    - كيف تسير الأمور؟
+    - كيف حالك؟
+    - كيف تسير الأمور معك؟
+    - كيف الأمور؟
+    - كيف حالك اليوم؟
+    - كيف حالك
+- intent: goodbye_en
+  examples: |
+    - Bye
+    - Goodbye
+    - See you later
+    - Bye bye
+    - Catch you later
+    - Have a good day
+    - See you soon
+    - I'm leaving
+    - Talk to you later
+    - I'm off
+    - Gotta go
+    - I'm out
+    - Farewell
+    - Take care
+    - I'm leaving now
+    - I'm off now
+    - I'm out now
+    - I'm leaving you
+    - see you
+    - see you later alligator
+- intent: goodbye_ar
+  examples: |
+    - وداعًا
+    - إلى اللقاء
+    - أراك لاحقًا
+    - وداعًا وداعًا
+    - أتمنى لك يومًا سعيدًا
+    - أراك قريبًا
+    - أنا ذاهب
+    - أتحدث إليك لاحقًا
+    - أنا خارج
+    - يجب أن أذهب
+    - اعتني بنفسك
+    - أنا مغادر الآن
+    - أنا ذاهب الآن
+    - أنا خارج الآن
+    - أنا مغادرك الآن
+    - أراك
+    - أراك في وقت لاحق يا تمساح
+    - باي
+- intent: ask_joke_en
+  examples: |
+    - tell me a joke
+    - say a joke
+    - tell me something funny
+    - say something funny
+    - make me laugh
+    - tell me a funny story
+    - tell me a joke please
+    - tell me a joke now
+- intent: ask_joke_ar
+  examples: |
+    - قل لي نكتة
+    - قل نكتة
+    - قل لي شيئًا مضحكًا
+    - قل شيئًا مضحكًا
+    - اجعلني أضحك
+    - قل لي قصة مضحكة
+    - قل لي نكتة من فضلك
+    - قل لي نكتة الآن
+    - احكيلي نكتة
+    - خرفني نكتة
+- intent: ask_book_by_author_en
+  examples: |
+    - Recommend me books by [Hendrickson, Robert A., 1923-](author)
+    - Show me books written by [King, Jessie Charles](author)
+    - Any books by [James A. McGilvray](author)?
+- intent: ask_book_by_subject_en
+  examples: |
+    - Do you have books on [Credit](subject)?
+    - Recommend books about [Political science](subject)
+    - I want books on [Political ethics](subject)
+    - Any books on [Political ethics](subject)?
+    - Ok, I want books on [Political ethics](subject)
+    - Show me books on [Political ethics](subject)
+    - Ok, I want some [History](subject) books
+    - I want to read something about [history]{"entity": "subject", "value": "History"} for example
+    - Tell me about the book [The cashless society](subject)
+    - I want details on [Political and social philosophy](subject)
+    - What is the book [The cashless society](subject) about?
+    - give me a book about [computer](subject)
+    - give me a book about [tech](subject)
+    - give me a book about [industr](subject)
+    - give me a book about [capital cities](subject)
+- intent: ask_book_by_language_en
+  examples: |
+    - Show me books in [English](language)
+    - Do you have any books in [Arabic](language)?
+    - I want books in [en](language)
+- intent: ask_book_by_author_ar
+  examples: |
+    - انصحني بكتب لـ [هندريكسون، روبرت أيه، 1923-](author)
+    - أرني الكتب التي كتبها [كينغ، جيسي تشارلز](author)
+    - هل هناك كتب لـ [جيمس أ. ماكجيلفراي](author)؟
+    - بدي كتب للكاتب [جيمس أ. ماكجيلفراي](author)
+    - اقترحلي كتب للكاتب [جيمس أ. ماكجيلفراي](author)
+    - اقترحلي كتب ل [جيمس أ. ماكجيلفراي](author)
+- intent: ask_book_by_subject_ar
+  examples: |
+    - هل لديك كتب عن [الائتمان](subject)؟
+    - انصحني بكتب حول [العلوم السياسية](subject)
+    - أريد كتب عن [الأخلاق السياسية](subject)
+    - هل هناك كتب عن [الأخلاق السياسية](subject)؟
+    - حسنًا، أريد كتبًا عن [الأخلاق السياسية](subject)
+    - أرني كتبًا عن [الأخلاق السياسية](subject)
+    - حسنًا، أريد بعض الكتب عن [التاريخ](subject)
+    - أرني كتبًا عن [التاريخ](subject)
+    - بدي كتب عن [التاريخ](subject)
+    - هاتلك كتب عن [التاريخ](subject)
+    - بدي اقرا كتب عن [التاريخ](subject)
+    - بدي كتب [تاريخ](subject)
+    - أخبرني عن الكتاب [المجتمع الخالي من النقد](subject)
+    - أريد تفاصيل حول [الفلسفة السياسية والاجتماعية](subject)
+    - ماذا يتعلق الكتاب [كمبيوتر](subject)؟
+    - بدي أعرف عن الكتاب [المجتمع الخالي من النقد](subject)
+    - بدي اقتراحات كتب عن [الشعر العربي](subject)
+    - كتب عن [فلسطين والصراع العربي الإسرائيلي](subject)
+    - كتب عن [الفلسفة العربية](subject)
+    - كتب عن [الفلسفة الإسلامية](subject)
+- intent: ask_book_by_language_ar
+  examples: |
+    - أرني الكتب باللغة [الإنجليزية](language)
+    - هل لديك أي كتب باللغة [العربية](language)؟
+    - أريد كتب باللغة [en](language)
+    - بدي كتب باللغة [en](language)
+- intent: request_book_recommendation_en
+  examples: |
+    - I want some book recommendations
+    - Can you recommend some books?
+    - Suggest me some books
+    - What are some good books to read?
+    - Give me book recommendations
+    - Recommend me some books
+    - Suggest some books to read
+    - What books should I read?
+    - Can you suggest some books?
+    - What books do you recommend?
+    - suggest some readings
+    - give me an [english]{"entity": "language", "value": "English"} book
+- intent: request_book_recommendation_ar
+  examples: |
+    - أريد بعض توصيات الكتب
+    - هل يمكنك توصية بعض الكتب؟
+    - اقترح لي بعض الكتب
+    - ما هي بعض الكتب الجيدة للقراءة؟
+    - أعطني توصيات الكتب
+    - اقترح بعض الكتب للقراءة
+    - ما هي الكتب التي يجب علي قراءتها؟
+    - هل يمكنك اقتراح بعض الكتب؟
+    - ما هي الكتب التي توصي بها؟
+    - اقترحلك شوية كتب
+    - اقترحلي كتب
+    - اقترحلي كتب للقراءة
+    - هاتلي كتب
+    - هاتلي شوية كتب
+    - بدي كتب
+    - بدي كتب للقراءة

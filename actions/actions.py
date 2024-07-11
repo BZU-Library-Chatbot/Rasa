@@ -30,7 +30,6 @@
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from langdetect import detect
-
 import json
 from typing import Any, Text, Dict, List
 
@@ -64,33 +63,81 @@ class ActionProvideBookRecommendation(Action):
 
         # Extract entities from user query
         entities = tracker.latest_message.get("entities", [])
-        book_title = next((entity.get("value") for entity in entities if entity["entity"] == "book_title"), None)
         author = next((entity.get("value") for entity in entities if entity["entity"] == "author"), None)
         subject = next((entity.get("value") for entity in entities if entity["entity"] == "subject"), None)
         language = next((entity.get("value") for entity in entities if entity["entity"] == "language"), None)
-
+        print(f"Author: {author}, Subject: {subject}, Language: {language}")
         # Detect user language
         user_message = tracker.latest_message.get('text')
         detected_language = detect(user_message)
-        
+
         # Load books data
         with open('./data/books.json') as f:
             books = json.load(f)
 
-        # Filter books based on user query
-        filtered_books = books
-        if book_title:
-            filtered_books = [book for book in filtered_books if book_title.lower() in book['Title'].lower()]
-        if author:
-            filtered_books = [book for book in filtered_books if any(author.lower() in a.lower() for a in book['Author'])]
-        if subject:
-            filtered_books = [book for book in filtered_books if any(subject.lower() in s.lower() for s in book['Subjects'])]
-        if language:
-            filtered_books = [book for book in filtered_books if book['Language'].lower() == language.lower()]
+        # Initial filtered books is all books
+        all_books = books
+        filtered_books = []
+        # Filter books based on the combination of criteria provided
+        if author and subject and language:
+            filtered_books = [book for book in books if 
+                              'Author' in book and author.lower() in book['Author'].lower() and
+                              (any(subject.lower() in s.lower() for s in book['Subjects']) or subject.lower() in book['Title'].lower()) and
+                              book['language'].lower() == language[:2].lower()]
+        elif author and subject:
+            filtered_books = [book for book in books if 
+                              'Author' in book and author.lower() in book['Author'].lower() and
+                              (any(subject.lower() in s.lower() for s in book['Subjects']) or subject.lower() in book['Title'].lower())]
+        elif author and language:
+            filtered_books = [book for book in books if 
+                              'Author' in book and author.lower() in book['Author'].lower() and
+                              book['language'].lower() == language[:2].lower()]
+        elif subject and language:
+            filtered_books = [book for book in books if 
+                              (any(subject.lower() in s.lower() for s in book['Subjects']) or subject.lower() in book['Title'].lower()) and
+                              book['language'].lower() == language[:2].lower()]
+        elif author:
+            filtered_books = [book for book in books if 'Author' in book and author.lower() in book['Author'].lower()]
+        elif subject:
+            filtered_books = [book for book in books if any(subject.lower() in s.lower() for s in book['Subjects']) or subject.lower() in book['Title'].lower()]
+        elif language:
+            if("عربي" in language):
+                language = "ar"
+            elif("انجليزي" in language):
+                language = "en"
+            filtered_books = [book for book in books if book['language'].lower() == language[:2].lower()]
 
-        # Get up to 10 random book recommendations from filtered books
+        # Get up to 10 book recommendations from filtered books
         recommendations = filtered_books[:10]
-        
+
+        # If recommendations are less than 10, tokenize the subject and search for each token
+        if len(recommendations) < 10 and subject:
+            tokens = subject.split()
+            for token in tokens:
+                additional_books = [book for book in all_books if token.lower() in book['Title'].lower() or any(token.lower() in s.lower() for s in book['Subjects'])]
+                # Add books to recommendations without duplicating
+                for book in additional_books:
+                    if book not in recommendations:
+                        recommendations.append(book)
+                        if len(recommendations) >= 10:
+                            break
+                if len(recommendations) >= 10:
+                    break
+
+        # If recommendations are still less than 10, tokenize the author and search for each token
+        if len(recommendations) < 10 and author:
+            tokens = author.split()
+            for token in tokens:
+                additional_books = [book for book in all_books if token.lower() in book['Author'].lower()]
+                # Add books to recommendations without duplicating
+                for book in additional_books:
+                    if book not in recommendations:
+                        recommendations.append(book)
+                        if len(recommendations) >= 10:
+                            break
+                if len(recommendations) >= 10:
+                    break
+
         # Generate response
         if detected_language == 'ar' and len(recommendations) > 0:
             response = "إليك بعض توصيات الكتب:\n\n"
@@ -102,16 +149,14 @@ class ActionProvideBookRecommendation(Action):
             else:
                 response = "Sorry, I couldn't find any book recommendations that match your request."
 
-        if len(recommendations) >= 0:    
+        if len(recommendations) > 0:    
             counter = 1
             for book in recommendations:
-                print("book", book)
                 if detected_language == 'ar':
-                    response += f"{counter}. {book['Title']} للكاتب: {', '.join(book['Author'])}\n\n"
+                    response += f"{counter}. {book['Title']} للكاتب: {book['Author']}\n\n"
                 else:
-                    response += f"{counter}. {book['Title']} author: {', '.join(book['Author'])}\n\n"
+                    response += f"{counter}. {book['Title']} author: {book['Author']}\n\n"
                 counter += 1
-
 
         dispatcher.utter_message(text=response)
         return []

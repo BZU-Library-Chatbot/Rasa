@@ -8,12 +8,8 @@ intents:
 - ask_book_by_language_en
 - ask_book_by_subject_ar
 - ask_book_by_subject_en
-- ask_book_by_title_ar
-- ask_book_by_title_en
 - ask_joke_ar
 - ask_joke_en
-- ask_more_books_ar
-- ask_more_books_en
 - bot_challenge_ar
 - bot_challenge_en
 - chitchat_ar
@@ -34,8 +30,6 @@ intents:
 - mood_unhappy_en
 - nlu_fallback_ar
 - nlu_fallback_en
-- recommend_books_ar
-- recommend_books_en
 - request_book_recommendation_ar
 - request_book_recommendation_en
 - stop_ar
@@ -44,20 +38,14 @@ intents:
 - thankyou_en
 entities:
 - subject
-- book_title
-- author
 - language
+- author
 slots:
-  book_title:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: book_title
   author:
     type: text
     mappings:
     - type: from_entity
-      entity: book_title
+      entity: author
   subject:
     type: text
     mappings:
@@ -375,10 +363,10 @@ responses:
   utter_request_book_recommendation_ar:
   - text: هل يمكنك تقديم المزيد من التفاصيل لأوصيك بكتاب؟ على سبيل المثال، العنوان، الكاتب، الموضوع، أو اللغة.
 actions:
-- utter_chitchat_en
 - action_provide_book_recommendation
-- utter_greet_en
 - utter_request_book_recommendation_en
+- utter_chitchat_en
+- utter_greet_en
 - action_default_fallback
 session_config:
   session_expiration_time: 60
