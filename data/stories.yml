@@ -162,7 +162,7 @@ stories:
       - action: utter_request_book_recommendation_en
       - intent: ask_book_by_subject_en
         entities:
-      - subject: history
+        - subject: history
       - action: action_provide_book_recommendation
 
   - story: happy path about books (ar)
@@ -171,7 +171,7 @@ stories:
       - action: utter_request_book_recommendation_ar
       - intent: ask_book_by_subject_ar
         entities:
-      - subject: التاريخ العثماني
+        - subject: التاريخ العثماني
       - action: action_provide_book_recommendation
 
   - story: interactive_story_1
@@ -185,7 +185,7 @@ stories:
       - intent: stop_en
       - intent: ask_book_by_subject_en
         entities:
-      - subject: math
+        - subject: math
       - action: action_provide_book_recommendation
 
   - story: ask about books by author (en)
