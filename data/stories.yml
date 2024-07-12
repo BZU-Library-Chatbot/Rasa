@@ -161,6 +161,8 @@ stories:
       - intent: request_book_recommendation_en
       - action: utter_request_book_recommendation_en
       - intent: ask_book_by_subject_en
+        entities:
+      - subject: history
       - action: action_provide_book_recommendation
 
   - story: happy path about books (ar)
@@ -168,6 +170,8 @@ stories:
       - intent: request_book_recommendation_ar
       - action: utter_request_book_recommendation_ar
       - intent: ask_book_by_subject_ar
+        entities:
+      - subject: التاريخ العثماني
       - action: action_provide_book_recommendation
 
   - story: interactive_story_1
@@ -180,69 +184,79 @@ stories:
       - action: utter_request_book_recommendation_en
       - intent: stop_en
       - intent: ask_book_by_subject_en
+        entities:
+      - subject: math
       - action: action_provide_book_recommendation
 
   - story: ask about books by author (en)
     steps:
       - intent: ask_book_by_author_en
+        entities:
+          - author: Rowling
       - action: action_provide_book_recommendation
 
   - story: ask about books by author (ar)
     steps:
       - intent: ask_book_by_author_ar
+        entities:
+          - author: جبران خليل جبران
       - action: action_provide_book_recommendation
-  
+
   - story: ask about books by language (en)
     steps:
       - intent: ask_book_by_language_en
+        entities:
+          - language: English
       - action: action_provide_book_recommendation
-  
+
   - story: ask about books by language (ar)
     steps:
       - intent: ask_book_by_language_ar
+        entities:
+          - language: عربي
       - action: action_provide_book_recommendation
 
   - story: interactive_story_1
     steps:
-    - intent: ask_book_by_subject_en
-      entities:
-      - subject: computer
-    - action: action_provide_book_recommendation
-    - intent: ask_book_by_subject_en
-      entities:
-      - subject: tech
-    - action: action_provide_book_recommendation
-    - intent: request_book_recommendation_en
-      entities:
-      - language: English
-    - slot_was_set:
-      - language: English
-    - action: utter_request_book_recommendation_en
+      - intent: ask_book_by_subject_en
+        entities:
+          - subject: computer
+      - action: action_provide_book_recommendation
+      - intent: ask_book_by_subject_en
+        entities:
+          - subject: tech
+      - action: action_provide_book_recommendation
+      - intent: ask_book_by_language_en
+        entities:
+          - language: English
+      - slot_was_set:
+          - language: English
+      - action: action_provide_book_recommendation
 
   - story: interactive_story_1
     steps:
-    - intent: request_book_recommendation_en
-      entities:
-      - language: English
-    - slot_was_set:
-      - language: English
-    - action: utter_request_book_recommendation_en
-    - intent: ask_book_by_subject_en
-      entities:
-      - subject: industr
-    - slot_was_set:
-      - subject: industr
-    - action: action_provide_book_recommendation
-    - intent: ask_book_by_subject_en
-      entities:
-      - subject: capital cities
-    - slot_was_set:
-      - subject: capital cities
-    - action: action_provide_book_recommendation
+      - intent: ask_book_by_language_ar
+        entities:
+          - language: انجليزي
+      - slot_was_set:
+          - language: انجليزي
+      - action: action_provide_book_recommendation
+      - intent: ask_book_by_subject_en
+        entities:
+          - subject: industr
+      - slot_was_set:
+          - subject: industr
+      - action: action_provide_book_recommendation
+      - intent: ask_book_by_subject_en
+        entities:
+          - subject: capital cities
+      - slot_was_set:
+          - subject: capital cities
+      - action: action_provide_book_recommendation
 
   - story: interactive_story_1
     steps:
-    - intent: ask_book_by_subject_ar
-      entities:
-      - subject: رياضيات
-    - action: action_provide_book_recommendation
+      - intent: ask_book_by_subject_ar
+        entities:
+          - subject: رياضيات
+      - action: action_provide_book_recommendation
