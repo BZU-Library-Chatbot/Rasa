@@ -21,16 +21,6 @@ rules:
       - intent: bot_challenge_ar
       - action: utter_iamabot_ar
 
-  # - rule: Handle fallback en
-  #   steps:
-  #     - intent: nlu_fallback-en
-  #     - action: utter_default_en
-
-  # - rule: Handle fallback ar
-  #   steps:
-  #     - intent: nlu_fallback-ar
-  #     - action: utter_default_ar
-
   - rule: say hi anytime the user says hi (en)
     steps:
       - intent: greet_en
@@ -53,12 +43,12 @@ rules:
 
   - rule: give books recommendations (en)
     steps:
-      - intent: recommend_books_en
+      - intent: request_book_recommendation_en
       - action: utter_request_book_recommendation_en
 
   - rule: give books recommendations (ar)
     steps:
-      - intent: recommend_books_ar
+      - intent: request_book_recommendation_ar
       - action: utter_request_book_recommendation_ar
 
   - rule: give book recommendations based on subject (en)
@@ -75,28 +65,8 @@ rules:
     steps:
       - intent: ask_book_by_author_en
       - action: action_provide_book_recommendation
-
+  
   - rule: give book recommendations based on author (ar)
     steps:
       - intent: ask_book_by_author_ar
-      - action: action_provide_book_recommendation
-
-  - rule: give book recommendations based on title (en)
-    steps:
-      - intent: ask_book_by_title_en
-      - action: action_provide_book_recommendation
-
-  - rule: give book recommendations based on title (ar)
-    steps:
-      - intent: ask_book_by_title_ar
-      - action: action_provide_book_recommendation
-
-  - rule: give book recommendations based on language (en)
-    steps:
-      - intent: ask_book_by_language_en
-      - action: action_provide_book_recommendation
-
-  - rule: give book recommendations based on language (ar)
-    steps:
-      - intent: ask_book_by_language_ar
       - action: action_provide_book_recommendation

@@ -2,3 +2,4 @@
 models
 *.dot
 *.pyc
+story_graph.dot
